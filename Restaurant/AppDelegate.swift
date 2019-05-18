@@ -22,7 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.color(hex: "#292929")
-        LoadingWireframe().installRootViewControllerIntoWindow(window: window!)
+        
+        if let window = window {
+            LoadingWireframe().installRootViewControllerIntoWindow(window: window)
+        }
+        
         return true
     }
     
